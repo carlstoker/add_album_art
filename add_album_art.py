@@ -33,13 +33,13 @@ def add_album_art(path):
     return None
 
 
-def add_art_to_file(audio_filename, cover_path):
+def add_art_to_file(audio_filename, cover_filename):
     """
-    Add album art to an individual file.
+    Add album art to an audio file.
 
     Keyword arguments:
         audio_filename -- Filename of audio file.
-        cover_path -- Filename of cover
+        cover_filename -- Filename of cover
 
     """
     print('Adding cover.jpg to {}'.format(os.path.basename(audio_filename)))
@@ -48,7 +48,7 @@ def add_art_to_file(audio_filename, cover_path):
         command = [
             'ffmpeg',
             '-i', audio_filename,
-            '-i', cover_path,
+            '-i', cover_filename,
             '-c', 'copy',
             '-map', '0:0',
             '-map', '1:0',
