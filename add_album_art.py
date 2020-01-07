@@ -12,6 +12,13 @@ import tempfile
 
 
 def add_album_art(path):
+    """
+    Search for cover.jpg in a directory. If found, add it to all MP3 and FLAC audio
+    files within that directory.
+
+    Keyword arguments:
+        path -- working directory for adding album art
+    """
     cover_path = os.path.abspath(os.path.join(path, 'cover.jpg'))
 
     if os.path.isfile(cover_path):
@@ -27,6 +34,14 @@ def add_album_art(path):
 
 
 def add_art_to_file(audio_filename, cover_path):
+    """
+    Add album art to an individual file.
+
+    Keyword arguments:
+        audio_filename -- Filename of audio file.
+        cover_path -- Filename of cover
+
+    """
     print('Adding cover.jpg to {}'.format(os.path.basename(audio_filename)))
 
     with tempfile.TemporaryDirectory() as temp_directory:
