@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-# Adds album art (cover.jpg) to mp3s and flacs, using ffmpeg
+"""
+Add album art in a directory to all MP3 and FLAC files contained within that directory.
+
+usage: add_album_art.py PATH
+"""
 import os
 import shutil
 import subprocess
